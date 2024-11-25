@@ -1,0 +1,11 @@
+# Database
+db.sqlite3
+
+# Ignore Python bytecode files
+__pycache__/
+
+# Ignore migration pycache files
+*/migrations/__pycache__/
+
+# Ignore .env
+.env
