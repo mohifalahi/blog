@@ -10,24 +10,30 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('api', '0001_initial'),
+        ("api", "0001_initial"),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='ad',
-            name='author',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),
+            model_name="ad",
+            name="author",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL
+            ),
         ),
         migrations.AddField(
-            model_name='comment',
-            name='ad',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='api.ad'),
+            model_name="comment",
+            name="ad",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE, to="api.ad"
+            ),
         ),
         migrations.AddField(
-            model_name='comment',
-            name='author',
-            field=models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),
+            model_name="comment",
+            name="author",
+            field=models.OneToOneField(
+                on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL
+            ),
         ),
     ]
