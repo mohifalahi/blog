@@ -20,7 +20,7 @@ class CommentListSerializer(serializers.ModelSerializer):
         return obj.author.name
 
 
-class AdCreateSerializer(serializers.ModelSerializer):
+class AdCreateUpdateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ad
         fields = ['title', 'content']
