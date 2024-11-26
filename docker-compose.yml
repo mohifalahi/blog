@@ -1,0 +1,45 @@
+services:
+  django:
+    build:
+      context: .
+      dockerfile: docker/dev/django/Dockerfile
+    command: python manage.py runserver 0.0.0.0:8000
+    environment:
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_HOST: postgres
+      DB_PORT: ${DB_PORT}
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  test:
+    build:
+      context: .
+      dockerfile: docker/dev/test/Dockerfile
+    command: python manage.py test tests.test_views
+    volumes:
+      - .:/app
+    depends_on:
+      - django
+      - postgres
+
+volumes:
+  postgres_data:
+
+
