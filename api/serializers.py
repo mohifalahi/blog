@@ -6,16 +6,16 @@ from .models import Ad, Comment
 class CommentCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment
-        fields = ['ad', 'content']
+        fields = ["ad", "content"]
 
 
 class CommentListSerializer(serializers.ModelSerializer):
     author = serializers.SerializerMethodField()
-    
+
     class Meta:
         model = Comment
-        fields = ['author', 'ad', 'content', 'created_at', 'updated_at']
-    
+        fields = ["author", "ad", "content", "created_at", "updated_at"]
+
     def get_author(self, obj):
         return obj.author.name
 
@@ -23,7 +23,7 @@ class CommentListSerializer(serializers.ModelSerializer):
 class AdCreateUpdateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ad
-        fields = ['title', 'content']
+        fields = ["title", "content"]
 
 
 class AdListSerializer(serializers.ModelSerializer):
@@ -32,7 +32,7 @@ class AdListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Ad
-        fields = ['author', 'title', 'content', 'created_at', 'updated_at', 'comments']
-    
+        fields = ["author", "title", "content", "created_at", "updated_at", "comments"]
+
     def get_author(self, obj):
         return obj.author.name

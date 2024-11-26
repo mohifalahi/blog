@@ -22,9 +22,8 @@ class Ad(BaseModel):
 
 class Comment(BaseModel):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    ad = models.ForeignKey(Ad, on_delete=models.CASCADE, related_name='comments')
+    ad = models.ForeignKey(Ad, on_delete=models.CASCADE, related_name="comments")
     content = models.TextField()
 
     def __str__(self):
         return self.content
-
