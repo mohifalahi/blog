@@ -1,0 +1,755 @@
+{
+	"info": {
+		"_postman_id": "528d1ba8-9b81-40fe-bc9b-8b2fb1a29433",
+		"name": "respina",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11574126",
+		"_collection_link": "https://goldtrade.postman.co/workspace/Team-Workspace~dbf94086-3fd4-4c68-a358-4265be2d722f/collection/11574126-528d1ba8-9b81-40fe-bc9b-8b2fb1a29433?action=share&source=collection_link&creator=11574126"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "leilafalahi@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password1",
+									"value": "Leila@1234",
+									"type": "text"
+								},
+								{
+									"key": "password2",
+									"value": "Leila@1234",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Leila Falahi",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/auth/register/",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"auth",
+								"register",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "mohammad@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password1",
+											"value": "Mohi@1234",
+											"type": "text"
+										},
+										{
+											"key": "password2",
+											"value": "Mohi@1234",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Mohammad",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/auth/register/",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"auth",
+										"register",
+										""
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"email\": \"mohammad@gmail.com\",\r\n    \"name\": \"Mohammad\"\r\n}"
+						},
+						{
+							"name": "fail",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "mohammad@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password1",
+											"value": "Mohi@1234",
+											"type": "text"
+										},
+										{
+											"key": "password2",
+											"value": "Mohi@1234",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Mohammad",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/auth/register/",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"auth",
+										"register",
+										""
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"email\": [\r\n        \"This field must be unique.\"\r\n    ]\r\n}"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "mohifalahi@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Mohi@1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/auth/login/",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"auth",
+								"login",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "mohi@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Mohi@1234",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/auth/login/",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"auth",
+										"login",
+										""
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTczMjY1NTM3NiwiaWF0IjoxNzMyNTY4OTc2LCJqdGkiOiI5YzIyYjY1NWVhODY0MzkyOGNhNGJkZmY2ZmI1MWUxNSIsInVzZXJfaWQiOjN9.pY4uqrZV4xT6pQihwKj9USDqmyYDTZrzUVUYO1lnRDw\",\r\n    \"access\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMyNTY5Mjc2LCJpYXQiOjE3MzI1Njg5NzYsImp0aSI6IjA1ZTlmYTU0MTk2ZDQyNWNhMWE4ZDNhN2FkNjJkM2M4IiwidXNlcl9pZCI6M30.G-JwAV_M0LNMW1BsiZ0oq5EUaUUtv64s3CdP4ob_hF8\"\r\n}"
+						},
+						{
+							"name": "fail",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "mohammad@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Mohi@123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/auth/login/",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"auth",
+										"login",
+										""
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"detail\": \"No active account found with the given credentials\"\r\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "ad-create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY0MTQ0MjI5LCJpYXQiOjE3MzI2MDgyMjksImp0aSI6IjZhMTQwYzNiZGFjZTQxODE5ZWFkZjU1N2EzMmU1N2UzIiwidXNlcl9pZCI6M30.nBhMH3Mm8XGSy78Ygd2roowWFX9PUEE5wSqTrH5L5aQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "ad",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "content",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/api/ads/new/",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"ads",
+								"new",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "author",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "ad 2",
+											"type": "text"
+										},
+										{
+											"key": "content",
+											"value": "content 3",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/api/ads/new/",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"ads",
+										"new",
+										""
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"title\": \"ad 3\",\r\n    \"content\": \"content 3\"\r\n}"
+						}
+					]
+				},
+				{
+					"name": "ad-list",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/ads/",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"ads",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/api/ads/",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"ads",
+										""
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "[\r\n    {\r\n        \"author\": \"Mohammad Falahi\",\r\n        \"title\": \"ad 2\",\r\n        \"content\": \"content 2\",\r\n        \"created_at\": \"2024-11-26T05:38:17.912212Z\",\r\n        \"updated_at\": \"2024-11-26T07:11:35.812962Z\"\r\n    },\r\n    {\r\n        \"author\": \"Mohammad Falahi\",\r\n        \"title\": \"ad 3\",\r\n        \"content\": \"content 3\",\r\n        \"created_at\": \"2024-11-26T07:11:43.741493Z\",\r\n        \"updated_at\": \"2024-11-26T07:11:43.741493Z\"\r\n    }\r\n]"
+						}
+					]
+				},
+				{
+					"name": "ad-get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/ads/5/",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"ads",
+								"5",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/api/ads/2/",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"ads",
+										"2",
+										""
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"author\": \"Mohammad Falahi\",\r\n    \"title\": \"ad 2\",\r\n    \"content\": \"content 2\",\r\n    \"created_at\": \"2024-11-26T05:38:17.912212Z\",\r\n    \"updated_at\": \"2024-11-26T07:11:35.812962Z\"\r\n}"
+						}
+					]
+				},
+				{
+					"name": "ad-update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"author\": \"Mohammad Falahi\",\r\n    \"title\": \"ad 3\",\r\n    \"content\": \"New content 3\",\r\n    \"created_at\": \"2024-11-26T05:34:35.303892Z\",\r\n    \"updated_at\": \"2024-11-26T05:34:35.303892Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/ads/3/",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"ads",
+								"3",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"author\": \"Mohammad Falahi\",\r\n    \"title\": \"ad 1\",\r\n    \"content\": \"New content 1\",\r\n    \"created_at\": \"2024-11-26T05:34:35.303892Z\",\r\n    \"updated_at\": \"2024-11-26T05:34:35.303892Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/api/ads/2/",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"ads",
+										"2",
+										""
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"author\": \"Mohammad Falahi\",\r\n    \"title\": \"ad 3\",\r\n    \"content\": \"New content 3\",\r\n    \"created_at\": \"2024-11-26T05:38:17.912212Z\",\r\n    \"updated_at\": \"2024-11-26T07:13:07.849726Z\"\r\n}"
+						}
+					]
+				},
+				{
+					"name": "ad-delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"author\": \"Mohammad Falahi\",\r\n    \"title\": \"ad 1\",\r\n    \"content\": \"New content 1\",\r\n    \"created_at\": \"2024-11-26T05:34:35.303892Z\",\r\n    \"updated_at\": \"2024-11-26T05:34:35.303892Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/ads/3/",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"ads",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "comment-create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY0MTQ0NjMwLCJpYXQiOjE3MzI2MDg2MzAsImp0aSI6ImJkMjU2MmZmOTc0NjQwZDQ4ZWEzY2M2MzNjNjU1NTQ4IiwidXNlcl9pZCI6Mn0.vculs14A6LawXCeh5LN0nuAdWVV1V05eshBMlrWp8hU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "ad",
+									"value": "9",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "comment 2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/api/comments/new/",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"comments",
+								"new",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "ad",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "content",
+											"value": "comment for ad 4 by user 1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/api/comments/new/",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"comments",
+										"new",
+										""
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"ad\": 4,\r\n    \"content\": \"comment for ad 4 by user 1\"\r\n}"
+						},
+						{
+							"name": "fail",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "ad",
+											"value": "3",
+											"type": "text"
+										},
+										{
+											"key": "content",
+											"value": "comment for ad 3 by user 2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/api/comments/new/",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"comments",
+										"new",
+										""
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"detail\": \"you cannot post comments more than once\"\r\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY0MTQ0MjI5LCJpYXQiOjE3MzI2MDgyMjksImp0aSI6IjZhMTQwYzNiZGFjZTQxODE5ZWFkZjU1N2EzMmU1N2UzIiwidXNlcl9pZCI6M30.nBhMH3Mm8XGSy78Ygd2roowWFX9PUEE5wSqTrH5L5aQ",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY0MTM2OTg4LCJpYXQiOjE3MzI2MDA5ODgsImp0aSI6IjAwMTVhNjI3Yjk3YjRiZTFhZmJhNjUzOGZkMTcxMzVhIiwidXNlcl9pZCI6Mn0.V1B1bOk5Rz7odXRUsZlXSUdBul-UTH_wxQbvGKjOywo",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
